@@ -1,0 +1,25 @@
+body
+{
+    margin:0;
+    padding:0;
+}
+
+.header
+{
+    background-size:cover;  
+    background-position: center;
+    background-repeat: no-repeat;
+    width:100vw;
+    height:20vh;
+}
+
+.vc 
+{
+    display: flex;
+    align-items: center;
+}
+.hc
+{
+    display: flex;
+    justify-content: center;
+}
