@@ -21,9 +21,14 @@ class Blog extends React.Component
     {
 
         return(
-        <div>
-            <h1>{this.state.title}</h1>
+        <div className="hc" style={{width:"100%",flexWrap:"wrap"}}>
+            <div style={{maxWidth:"50vmax"}}>
+            <h1 style={{fontSize:"5vh",fontWeight:"bold"}}>{this.state.title}</h1>
+            <div style={{flexBasis:"100%"}}/>
+            <div style={{fontSize:"3vh",lineHeight:"5vh"}}> 
             <ReactMarkdown source={this.state.content}/>
+            </div>
+            </div>
         </div>);
     }
 }

@@ -2,7 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 import * as contentful from 'contentful'
 import Header from '../components/Header.js'
-
+import Head from '../components/Head.js'
+import '../styles/index.css'
+import Preview from '../components/Preview.js'
 
 class IndexPage extends React.Component
 {
@@ -21,12 +23,16 @@ class IndexPage extends React.Component
   {
     return(
     <div>
+      <Head/>
       <Header/>
-      <div className="hc" style={{flexWrap:"wrap",width:"100%"}}>
+      <div className="hc" style={{width:"100%"}}>
       {this.state.posts.map(post =>
-        <div style={{width:"50%",flexBasis:"100%"}}>
-        <a href={"/post?id="+post.sys.id}>{post.fields.title}</a>
-        </div>)}
+      <Preview data={post}/>
+      /*
+        <div style={{display:"table",clear:"both",whiteSpace: "nowrap",border:".3vmin solid black",borderRadius:"1vmin",margin:"1vmin"}}>
+        <a style={{display:"table-cell",position:"relative",color:"black",textDecoration:"none",margin:"10%",fontSize:"3vmin"}}href={"/post?id="+post.sys.id}>{post.fields.title}</a>
+        </div>*/
+        )}
       </div>
     </div>);
   }
